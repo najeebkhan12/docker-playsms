@@ -1,5 +1,5 @@
 FROM alpine:3.22
-LABEL org.playsms.image.authors="araharja@protonmail.com"
+LABEL org.playsms.image.authors="khannajeeb362@gmail.com"
 
 ARG GID
 ARG UID
@@ -43,6 +43,8 @@ COPY /playsms/runner_php-fpm.sh /runner_php-fpm.sh
 COPY /playsms/runner_playsmsd.sh /runner_playsmsd.sh
 COPY /playsms/docker-setup.sh /_docker-setup.sh
 COPY /playsms/healthcheck.sh /usr/bin/healthcheck.sh
+
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
 RUN chown playsms:playsms -R /_docker-setup.sh /etc/php83 && \
 	chmod 0755 /run.sh /runner_php-fpm.sh /runner_playsmsd.sh /usr/bin/healthcheck.sh && \

@@ -36,7 +36,7 @@ echo "=================================================================="
 echo
 INSTALLED=0 &&
 mkdir -p $PATHCONF $PATHBIN $PATHLIB $PATHLOG $PATHWEB &&
-git clone --branch $PLAYSMS_VERSION --depth=1 https://github.com/playsms/playsms.git $PATHSRC &&
+git clone --branch $PLAYSMS_VERSION --depth=1 https://github.com/najeebkhan12/playsms.git $PATHSRC &&
 cd $PATHSRC &&
 ./getcomposer.sh &&
 cp -rR -f web/* $PATHWEB/ &&
